@@ -23,9 +23,10 @@ func set_debug_on(targetForStateText):
 	fsmDebug = true
 	uptateTextTarget = true
 	textTarget = targetForStateText
-	
 
-func set_owner(Owner,targetText=null):
+
+
+func set_actowner(Owner,targetText=null):
 	print("setting owner")
 	actowner=Owner
 	if(targetText):
@@ -41,7 +42,7 @@ func clear_states():
 	
 func autoload(Owner):
 	#print(actowner.name)
-	self.set_owner(Owner,null)
+	self.set_actowner(Owner,null)
 	#print(actowner.name)
 	for st in get_children():
 		print("adding state:",st.name)

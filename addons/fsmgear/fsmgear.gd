@@ -5,7 +5,7 @@ const mainPanelTemp= preload("fsmEditor.tscn")
 var main_panel_instance
 
 func _enter_tree():
-	add_custom_type("Fsm","Node",preload("source/Fsm.gd"),preload("assets/fsm-icons/fsm.png"))
+	add_custom_type("Fsm","Node",preload("res://addons/fsmgear/source/Fsm.gd"),preload("res://addons/fsmgear/assets/fsm-icons/fsm.png"))
 	add_custom_type("FsmState","Node",preload("source/FsmState.gd"),preload("assets/fsm-icons/fsmState.png"))
 	add_custom_type("FsmTrasition","Node",preload("source/FsmTransition.gd"),preload("assets/fsm-icons/fsmtransition.png"))
 	

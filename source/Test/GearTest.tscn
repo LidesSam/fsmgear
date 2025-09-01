@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bng5hhasfhkdv"]
+[gd_scene load_steps=4 format=3 uid="uid://bng5hhasfhkdv"]
 
 [ext_resource type="Script" uid="uid://dc8pjikgdbjyp" path="res://source/Test/dummy.gd" id="1_xuvcl"]
 [ext_resource type="Texture2D" uid="uid://blt1rj7hp7wui" path="res://icon.svg" id="2_ju1av"]
+[ext_resource type="Script" uid="uid://bkd7u3ab7fqp8" path="res://addons/fsmgear/source/Fsm.gd" id="3_emjwm"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,3 +11,7 @@ script = ExtResource("1_xuvcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dummy"]
 texture = ExtResource("2_ju1av")
+
+[node name="Fsm" type="Node" parent="."]
+script = ExtResource("3_emjwm")
+metadata/_custom_type_script = "uid://bkd7u3ab7fqp8"
