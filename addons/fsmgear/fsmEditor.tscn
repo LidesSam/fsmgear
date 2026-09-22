@@ -1,13 +1,37 @@
 [gd_scene format=3 uid="uid://b0p3ypl8s2hjx"]
 
-[node name="VBoxContainer" type="VBoxContainer"]
+[ext_resource type="Script" uid="uid://db1yutygpysf7" path="res://addons/fsmgear/fsm_editor.gd" id="1_cthlx"]
+
+[node name="fsmEditor" type="Control" unique_id=699400882]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cthlx")
 
-[node name="fsm gear" type="Label" parent="."]
-layout_mode = 2
-text = "FSM GEAR v1.0"
+[node name="TargetLbl" type="Label" parent="." unique_id=1292160684]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 40.0
+offset_bottom = 71.0
 
-[node name="Control" type="VBoxContainer" parent="."]
-layout_mode = 2
+[node name="TargetLbl2" type="Label" parent="." unique_id=1021764834]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="fsmstate" type="Control" parent="." unique_id=1956215909]
+anchors_preset = 0
+offset_top = 96.0
+offset_right = 40.0
+offset_bottom = 136.0
+
+[node name="GraphEdit" type="GraphEdit" parent="." unique_id=2076645945]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 22.0
+offset_right = 1141.0
+offset_bottom = 624.0
+scroll_offset = Vector2(-212, -205)

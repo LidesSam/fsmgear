@@ -1,17 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bng5hhasfhkdv"]
+[gd_scene format=3 uid="uid://bng5hhasfhkdv"]
 
 [ext_resource type="Script" uid="uid://dc8pjikgdbjyp" path="res://source/Test/dummy.gd" id="1_xuvcl"]
 [ext_resource type="Texture2D" uid="uid://blt1rj7hp7wui" path="res://icon.svg" id="2_ju1av"]
 [ext_resource type="Script" uid="uid://bkd7u3ab7fqp8" path="res://addons/fsmgear/source/Fsm.gd" id="3_emjwm"]
+[ext_resource type="Script" uid="uid://cw1m4ybwjxbdc" path="res://addons/fsmgear/source/FsmState.gd" id="4_0533k"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=854160742]
 
-[node name="Dummy" type="CharacterBody2D" parent="."]
+[node name="Dummy" type="CharacterBody2D" parent="." unique_id=299643104]
 script = ExtResource("1_xuvcl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Dummy"]
-texture = ExtResource("2_ju1av")
-
-[node name="Fsm" type="Node" parent="."]
+[node name="Fsm" type="Node" parent="Dummy" unique_id=1227022058]
 script = ExtResource("3_emjwm")
 metadata/_custom_type_script = "uid://bkd7u3ab7fqp8"
+
+[node name="check" type="Node" parent="Dummy/Fsm" unique_id=1607672383]
+script = ExtResource("4_0533k")
+
+[node name="Walk" type="Node" parent="Dummy/Fsm" unique_id=4844974]
+script = ExtResource("4_0533k")
+
+[node name="Jump" type="Node" parent="Dummy/Fsm" unique_id=1984202703]
+script = ExtResource("4_0533k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Dummy" unique_id=1864530730]
+texture = ExtResource("2_ju1av")

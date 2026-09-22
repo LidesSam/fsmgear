@@ -131,3 +131,6 @@ func change_to_state(state_name):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func get_all_states():
+	return get_children()
