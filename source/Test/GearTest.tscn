@@ -28,5 +28,11 @@ script = ExtResource("4_0533k")
 [node name="Jump" type="Node" parent="Dummy/Fsm" unique_id=1984202703]
 script = ExtResource("4_0533k")
 
+[node name="walk" type="Node" parent="Dummy/Fsm" unique_id=1912963370]
+script = ExtResource("4_0533k")
+
+[node name="walk1" type="Node" parent="Dummy/Fsm" unique_id=240959506]
+script = ExtResource("4_0533k")
+
 [node name="Sprite2D" type="Sprite2D" parent="Dummy" unique_id=1864530730]
 texture = ExtResource("2_ju1av")

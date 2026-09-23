@@ -26,8 +26,15 @@ func current_target_data():
 		var stateDispNode: GraphNode = GraphNode.new()
 		stateDispNode.title = state.name
 		#stateDispNode.position = Vector2(16, 16 + 48* i)
-		stateDispNode.position_offset = Vector2(16, 16 + 48 * i)
-
+		if state.has_meta("graph_position"):
+			stateDispNode.position_offset = state.get_meta("graph_position")
+		else:
+			stateDispNode.position_offset = Vector2(16, 16 + 48 * i)
+		# Save position whenever the GraphNode moves
+		stateDispNode.position_offset_changed.connect(
+			func():
+				state.set_meta("graph_position", stateDispNode.position_offset)
+		)
 		statesDisplay.add_child(stateDispNode)
 		statesNodes.push_back(stateDispNode)
 		var statelistlbl = Label.new()
@@ -44,7 +51,6 @@ func clear_graph(clearTarget=true):
 			child.queue_free()
 	for child in fsmStatesList.get_children():
 		child.queue_free()
-
 
 func get_unique_state_name(stateName: String) -> String:
 	if not currentTarget:
