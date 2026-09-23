@@ -21,6 +21,7 @@ func current_target_data():
 	if !currentTarget:
 		return
 	var i = 0
+	
 	for state in currentTarget.get_children():
 		i += 1
 		var stateDispNode: GraphNode = GraphNode.new()
@@ -40,6 +41,7 @@ func current_target_data():
 		var statelistlbl = Label.new()
 		statelistlbl.text= state.name
 		fsmStatesList.add_child(statelistlbl)
+		
 	
 
 func clear_graph(clearTarget=true):

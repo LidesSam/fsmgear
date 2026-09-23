@@ -21,6 +21,9 @@ anchor_right = 0.22222222
 anchor_bottom = 1.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Owner" type="Label" parent="sidebar" unique_id=366002039]
+layout_mode = 2
+
 [node name="TargetLbl" type="Label" parent="sidebar" unique_id=1292160684]
 layout_mode = 2
 

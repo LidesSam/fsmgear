@@ -31,6 +31,7 @@ func _on_selection_changed():
 	if node.get_script() == preload("res://addons/fsmgear/source/Fsm.gd"):
 		main_panel_instance.show_fsm(node)
 	else:
+		
 		main_panel_instance.clear_graph()
 
 func _make_visible(visible):

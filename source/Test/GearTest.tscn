@@ -17,6 +17,7 @@ metadata/_custom_type_script = "uid://bkd7u3ab7fqp8"
 
 [node name="Idle" type="Node" parent="Dummy/Fsm" unique_id=1607672383]
 script = ExtResource("4_0533k")
+metadata/graph_position = Vector2(180, 80)
 
 [node name="FsmTrasition" type="Node" parent="Dummy/Fsm/Idle" unique_id=203057322 node_paths=PackedStringArray("nexState")]
 script = ExtResource("4_rtnl0")
@@ -24,9 +25,11 @@ nexState = NodePath("../../Walk")
 
 [node name="Walk" type="Node" parent="Dummy/Fsm" unique_id=4844974]
 script = ExtResource("4_0533k")
+metadata/graph_position = Vector2(200, 200)
 
 [node name="Jump" type="Node" parent="Dummy/Fsm" unique_id=1984202703]
 script = ExtResource("4_0533k")
+metadata/graph_position = Vector2(320, 120)
 
 [node name="walk" type="Node" parent="Dummy/Fsm" unique_id=1912963370]
 script = ExtResource("4_0533k")
