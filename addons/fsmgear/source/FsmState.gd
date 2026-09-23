@@ -17,11 +17,11 @@ var exitaction=null
 func _ready():
 	pass
 
-func setFsmParent(fsm):
+func set_fsm_parent(fsm):
 	parentFsm=fsm
 
 func enter(actowner):
-	UpdateOwnerStateDisplay(actowner)
+	update_owner_state_display(actowner)
 	print(actowner.name," enterState:",StateName)
 	
 	if(enteraction):
@@ -32,7 +32,7 @@ func enter(actowner):
 func update(actowner,delta):
 	pass
 
-func handleInput(actowner,event):
+func handle_input(actowner,event):
 	pass
 
 func exit(actowner):
@@ -49,7 +49,7 @@ func set_enteraction(callback:Callable):
 	enteraction=callback
 	print(exitaction);
 	
-func UpdateOwnerStateDisplay(actowner):
+func update_owner_state_display(actowner):
 	if actowner.has_method("updateStateName"):
 		actowner.updateStateName(StateName)
 

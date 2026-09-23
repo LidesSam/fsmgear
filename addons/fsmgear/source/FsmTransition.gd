@@ -1,7 +1,7 @@
 @tool
 extends Node
 
-@export var nexState: Node=null
+@export var nexState=null
 @export var condition: Callable 
 
 

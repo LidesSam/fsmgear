@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dc8pjikgdbjyp" path="res://source/Test/dummy.gd" id="1_xuvcl"]
 [ext_resource type="Texture2D" uid="uid://blt1rj7hp7wui" path="res://icon.svg" id="2_ju1av"]
 [ext_resource type="Script" uid="uid://bkd7u3ab7fqp8" path="res://addons/fsmgear/source/Fsm.gd" id="3_emjwm"]
-[ext_resource type="Script" uid="uid://cw1m4ybwjxbdc" path="res://addons/fsmgear/source/FsmState.gd" id="4_0533k"]
+[ext_resource type="Script" uid="uid://brf2lfa11c3be" path="res://addons/fsmgear/source/FsmState.gd" id="4_0533k"]
 [ext_resource type="Script" uid="uid://pvipxq0kerpe" path="res://addons/fsmgear/source/FsmTransition.gd" id="4_rtnl0"]
 
 [node name="Node2D" type="Node2D" unique_id=854160742]
@@ -19,9 +19,10 @@ metadata/_custom_type_script = "uid://bkd7u3ab7fqp8"
 script = ExtResource("4_0533k")
 metadata/graph_position = Vector2(180, 80)
 
-[node name="FsmTrasition" type="Node" parent="Dummy/Fsm/Idle" unique_id=203057322 node_paths=PackedStringArray("nexState")]
+[node name="FsmTrasition" type="Node" parent="Dummy/Fsm/Idle" unique_id=203057322]
 script = ExtResource("4_rtnl0")
-nexState = NodePath("../../Walk")
+nexState = Object(Node,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","script":ExtResource("4_0533k"),"StateName":null,"parentFsm":null,"recursive":0,"transitions":[],"enteraction":null,"exitaction":null,"metadata/graph_position":Vector2(200, 200))
+
 
 [node name="Walk" type="Node" parent="Dummy/Fsm" unique_id=4844974]
 script = ExtResource("4_0533k")
