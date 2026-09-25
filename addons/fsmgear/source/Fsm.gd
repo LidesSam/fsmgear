@@ -24,13 +24,11 @@ func set_debug_on(targetForStateText):
 	uptateTextTarget = true
 	textTarget = targetForStateText
 
-
-
 func set_actowner(Owner,targetText=null):
 	print("setting owner")
 	actowner=Owner
 	if(targetText):
-		textTarget =targetText
+		textTarget = targetText
 		uptateTextTarget =true
 	pass
 
@@ -70,8 +68,8 @@ func add_global_transition(stateName,funcName:Callable):
 	
 func add_state(state_name, st):
 #	create state and past this as parent
-	st.setFsmParent(self)
-	st.StateName= state_name
+	st.set_fsm_parent(self)
+	st.StateName= str(state_name)
 	states.push_back(st)
 	statesNames.push_back(st.StateName)
 
@@ -94,13 +92,10 @@ func fsm_update(delta):
 				change_to_state(globalToStates[i])
 				break
 	#get the transitions state to the current state
-	
 	for t in currentState.transitions:
 		#check an trigger one by one.
 		if(t.check_condition(self)):
 			break
-		
-		
 		
 	if(textTarget and uptateTextTarget):
 			textTarget.text= get_current_state_name()
@@ -121,6 +116,7 @@ func change_state_by_index(idx):
 
 #change to the state by name
 func change_to_state(state_name):
+	print()
 	if(currentStateAsignedName!=state_name):
 		var idx =0
 		for st in statesNames:
