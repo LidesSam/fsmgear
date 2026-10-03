@@ -11,10 +11,8 @@ func _enter_tree():
 	
 	#still in construction
 	add_custom_type("FsmTrasition","Node",preload("source/FsmTransition.gd"),preload("assets/fsm-icons/fsmtransition.png"))
-	
-	main_panel_instance= mainPanelTemp.instantiate()
 	get_editor_interface().get_editor_main_screen().add_child(main_panel_instance)
-	_make_visible(true)
+	#_make_visible(true)
 
 	# Listen for selection changes
 	get_editor_interface().get_selection().selection_changed.connect(_on_selection_changed)
@@ -45,8 +43,7 @@ func _exit_tree():
 	remove_custom_type("FsmState")
 	remove_custom_type("FsmTrasition")
 
-
-#to draw this editor tab
+#to draw this editor tab falte to hide tab "FSM-GEAR"
 func _has_main_screen():
 	return true;
 #TiTLe of the tab and plugin
