@@ -8,17 +8,16 @@ func _enter_tree():
 	#this create the new custom nodes of the fsm.
 	add_custom_type("Fsm","Node",preload("res://addons/fsmgear/source/Fsm.gd"),preload("res://addons/fsmgear/assets/fsm-icons/fsm.png"))
 	add_custom_type("FsmState","Node",preload("source/FsmState.gd"),preload("assets/fsm-icons/fsmState.png"))
-	
+
 	#still in construction
 	add_custom_type("FsmTrasition","Node",preload("source/FsmTransition.gd"),preload("assets/fsm-icons/fsmtransition.png"))
+	
+	main_panel_instance= mainPanelTemp.instantiate()
 	get_editor_interface().get_editor_main_screen().add_child(main_panel_instance)
-	#_make_visible(true)
-
-	# Listen for selection changes
-	get_editor_interface().get_selection().selection_changed.connect(_on_selection_changed)
-
-
+	_make_visible(false)
+	
 func _on_selection_changed():
+	print("fsmGear:change")
 	var selection = get_editor_interface().get_selection().get_selected_nodes()
 
 	if selection.is_empty():
@@ -29,12 +28,17 @@ func _on_selection_changed():
 	if node.get_script() == preload("res://addons/fsmgear/source/Fsm.gd"):
 		main_panel_instance.show_fsm(node)
 	else:
-		
 		main_panel_instance.clear_graph()
 
-func _make_visible(visible):
-	if(main_panel_instance):
-		main_panel_instance.visible=visible
+func _make_visible(visible: bool):
+	if visible:
+		if main_panel_instance == null:
+			main_panel_instance = mainPanelTemp.instantiate()
+			get_editor_interface().get_editor_main_screen().add_child(main_panel_instance)
+		main_panel_instance.visible = true
+	else:
+		if main_panel_instance:
+			main_panel_instance.visible = false
 
 func _exit_tree():
 	if(main_panel_instance):
