@@ -31,10 +31,22 @@ func _on_selection_changed():
 	if node.get_script() == preload("res://addons/fsmgear/source/Fsm.gd"):
 		print("FSM selected")
 		main_panel_instance.show_fsm(node)
-	else:
-		print("Selected node is not an FSM")
-		main_panel_instance.clear_graph()
-
+		return
+	
+	var childNode= find_child_target(node)
+	if childNode:
+		print("Child FSM selected")
+		main_panel_instance.show_fsm(node)
+		return
+	print("Selected node is not an FSM")
+	main_panel_instance.clear_graph()
+	
+func find_child_target(node):
+	for n in node.get_children():
+		if n.get_script() == preload("res://addons/fsmgear/source/Fsm.gd"):
+			return n
+	return false
+	
 func _make_visible(visible: bool):
 	if visible:
 		if main_panel_instance == null:
