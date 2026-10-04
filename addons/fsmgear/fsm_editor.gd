@@ -45,10 +45,12 @@ func current_target_data():
 	
 
 func clear_graph(clearTarget=true):
+	targetNameLbl.text = "clearing"
 	if clearTarget:
 		currentTarget=null
-		if(has_node("targetNameLbl")):
-			targetNameLbl.text = "No FSM"
+		targetNameLbl.text = "No FSM"
+	else:
+		targetNameLbl.text = "Nix"
 	for child in statesDisplay.get_children():
 		if child is GraphNode:#to prevent missin conection_layer
 			child.queue_free()

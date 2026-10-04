@@ -26,6 +26,7 @@ layout_mode = 2
 
 [node name="TargetLbl" type="Label" parent="sidebar" unique_id=1292160684]
 layout_mode = 2
+text = "unstart"
 
 [node name="newStateNameEditLine" type="LineEdit" parent="sidebar" unique_id=1270529748]
 layout_mode = 2

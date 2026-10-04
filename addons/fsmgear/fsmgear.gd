@@ -16,8 +16,10 @@ func _enter_tree():
 	get_editor_interface().get_editor_main_screen().add_child(main_panel_instance)
 	_make_visible(false)
 	
+	get_editor_interface().get_selection().selection_changed.connect( _on_selection_changed )
+	
 func _on_selection_changed():
-	print("fsmGear:change")
+	print("fsmGear: change")
 	var selection = get_editor_interface().get_selection().get_selected_nodes()
 
 	if selection.is_empty():
@@ -25,9 +27,12 @@ func _on_selection_changed():
 		return
 
 	var node = selection[0]
+
 	if node.get_script() == preload("res://addons/fsmgear/source/Fsm.gd"):
+		print("FSM selected")
 		main_panel_instance.show_fsm(node)
 	else:
+		print("Selected node is not an FSM")
 		main_panel_instance.clear_graph()
 
 func _make_visible(visible: bool):
